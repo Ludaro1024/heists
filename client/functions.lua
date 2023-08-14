@@ -25,3 +25,31 @@ function debug2(msg)
         end
     end
 end
+
+function locale(msg)
+return Config.Translation[Config.Locale][msg]
+end
+
+
+if Config.Heistsnpc.blip.enabled == true then
+    info = Config.Heistsnpc.blip
+info.blip = AddBlipForCoord(Config.Heistsnpc.coords.x, Config.Heistsnpc.coords.y, Config.Heistsnpc.coords.z)
+SetBlipSprite(info.blip, info.id)
+SetBlipDisplay(info.blip, 4)
+      SetBlipScale(info.blip, 1.0)
+      SetBlipColour(info.blip, info.colour)
+      SetBlipAsShortRange(info.blip, true)
+	  BeginTextCommandSetBlipName("STRING")
+      AddTextComponentString(info.title)
+      EndTextCommandSetBlipName(info.blip)
+end
+
+function DoesPedHaveShootingWeapon(ped)
+    for i = 1, 7 do -- Iterate through weapon slots 1 to 7 (which are shooting weapons)
+        local weaponHash = GetHashKey(GetWeapontypeModel(i))
+        if HasPedGotWeapon(ped, weaponHash, false) then
+            return true
+        end
+    end
+    return false
+end

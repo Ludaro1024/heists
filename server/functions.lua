@@ -25,3 +25,8 @@ function debug2(msg)
     end
 end
 
+
+AddEventHandler('ludaro_heists:reward', function(source, reward)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    xPlayer.addMoney(reward)
+end)

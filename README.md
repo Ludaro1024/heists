@@ -4,6 +4,8 @@ this script is based on an idea from myscripts suggestsions
 (https://discord.com/channels/736871430997934151/1119155578388873266/1119949332003696670)
 
 
+you need ox-lib (https://github.com/overextended/ox_lib)
+and NativeUI (which is Built in)
 Idea by: Fizzy
 Code by: ME! (Ludaro)
 Future mod heist raids
